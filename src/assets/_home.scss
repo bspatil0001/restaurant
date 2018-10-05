@@ -1,0 +1,138 @@
+
+.search-wrapper {
+
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  table {
+    width: 100%;
+    tr {
+      vertical-align: top;
+    }
+
+    td {
+      width: 50%;
+      padding: 0 15px;
+
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+
+      .search-keys {
+        ul {
+          padding: 0;
+          display: inline-block;
+          li {
+            position: relative;
+            list-style: none;
+            display: inline-block;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+
+            .delete {
+              float: left;
+              height: 12px;
+              width: 12px;
+              background: #000;
+              margin-top: 3px;
+              margin-right: 5px;
+            }
+          }
+        }
+
+      }
+      .buttons {
+        ul {
+          padding: 0;
+          display: inline-block;
+          background-color: #ccc;
+          float: right;
+
+          li {
+            list-style: none;
+            .button {
+              padding: 10px 20px;
+              background-color: #f00;
+              display: inline-block;
+              color: #fff;
+              border-radius: 5px;
+              border: none;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.restaurant-wrapper {
+  .restaurant {
+    margin-bottom: 15px;
+
+    .restaurant-img {
+      float: left;
+      padding-right: 15px;
+      background-color: #fff;
+      height: 150px;
+      width: 200px;
+      img {
+        width: 100%;
+      }
+    }
+    .restaurant-info {
+      .info-1 {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+        .restaurant-name {
+          font-size: 24px;
+          padding-bottom: 10px;
+        }
+        .restaurant-cusines {
+
+        }
+      }
+      .info-2 {
+        ul {
+          padding: 0;
+
+          li {
+            list-style: none;
+            display: inline-block;
+
+            &:first-child{
+              padding-right: 40px;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 600px) {
+  td {
+    padding: 0 !important;
+    display: block;
+    width: 99.9% !important;
+    clear: both;
+    margin-bottom: 15px;
+  }
+}
