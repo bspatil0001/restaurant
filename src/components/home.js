@@ -25,19 +25,28 @@ export default {
     searchRestaurants(){
       this.filteredrestaurants = [];
       let restaurants = Object.create(this.restaurants);
-      this.searchKeys = this.searchString.trim().length > 0 ? this.searchString.trim().split(' '): [];
+      // let restaurants = JSON.parse(JSON.stringify(this.restaurants));
+      let keys = this.searchString.trim().length > 0 ? this.searchString.trim().split(' '): [];
+
+      this.searchKeys = keys.filter(key => {
+        if(key.trim().length > 0){
+          return key;
+        }
+      })
+
       if(this.searchKeys.length > 0){
         for(let i=0;i<restaurants.length;i++){
           for(let j=0;j<this.searchKeys.length;j++){
             if(restaurants[i].name.toLowerCase().indexOf(this.searchKeys[j].toLowerCase()) > -1){
-              this.filteredrestaurants.push(restaurants[i]);
-              restaurants.splice(i, 1);
+              if(this.filteredrestaurants.indexOf(restaurants[i]) < 0){
+                this.filteredrestaurants.push(restaurants[i]);
+              }
             }
           }
         }
       }
       else{
-        this.filteredrestaurants = this.restaurants;
+        this.filteredrestaurants = Object.create(this.restaurants);
       }
     },
     sortRestaurant(){
