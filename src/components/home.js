@@ -46,7 +46,7 @@ export default {
         }
       }
       else{
-        this.filteredrestaurants = Object.create(this.restaurants);
+        this.filteredrestaurants = Object.assign([], this.restaurants);
       }
     },
     sortRestaurant(){
